@@ -2,7 +2,6 @@
 
 ## Libraries used
 - os
-- Numpy
 - Requests
 - BeautifulSoup
 - fake_useragent
