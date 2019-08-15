@@ -9,6 +9,8 @@ from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 import time 
 
+
+
 # Background on user-agents
 
 ua = UserAgent() 
@@ -452,18 +454,12 @@ class DataCamp:
         time.sleep(5)
         driver.quit()
 
-        
 
-
-dir(DataCamp) 
 ################################################################################
 def prepare_link(link):
     base = ' '.join(link.split('/')[:-1])
     start = link.split('/')[-1][-8:]
     return base, start 
-
-#os.chdir('../') 
-os.getcwd() 
 
 
 #(4015, 'https://www.datacamp.com/courses/network-analysis-in-python-part-2') ------------------

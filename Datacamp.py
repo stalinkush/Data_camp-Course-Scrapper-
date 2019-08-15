@@ -1,5 +1,6 @@
 import requests
 from bs4 import BeautifulSoup as bs 
+import bs4
 
 bio = 'https://www.datacamp.com/courses/biomedical-image-analysis-in-python'
 sign_in = 'https://www.datacamp.com/users/sign_in'
@@ -60,21 +61,17 @@ for i in ol.children:
         print('-'*20)
         ch_headers.append(header)
         ch_desc.append(desc)
-ch_headers
+
 
 ul = ol.find_all('ul', class_='chapter__exercises hidden') 
 h5 = ul[0].find_all('h5') #chapter headers 
 links = ul[0].find_all('a') #chapter links
 
-a[0].img['alt']
-a[0]['href']
-
 for a, b in zip(h5, links):
     print(a.get_text(), end='  ') # Get the text from headers tag
     print(b.img['alt'].split()[2]) # link description(Video, exer, MC)
     print('Links -->  ', b['href']) 
-    
-b['href'][35:]
+
 
 
 course = {}
@@ -84,7 +81,6 @@ for i, lesson in enumerate(ul):
     chapters = {(b.img['alt'].split()[2], a.get_text()):b['href'] for a, b in zip(h5, links)}
     course['chapter {}'.format(i+1)] = chapters 
 
-course
 
 def print_course(course_dict):
     for i, chapter in enumerate(course_dict.keys()):
@@ -99,6 +95,7 @@ def print_course(course_dict):
             print(string)
             print('-'*len(string))
             k += 1
+
 
 print_course(course) 
 
