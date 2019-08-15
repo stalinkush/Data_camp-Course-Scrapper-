@@ -33,8 +33,8 @@ for i in inputs:
         token = i['value']
 print(token)
 
-payload = {'user[email]': 'stalinsampras7@live.com',
-'user[password]': 'Data16Camp',
+payload = {'user[email]': None,
+'user[password]': None,
 'authenticity_token': token}
 
 result = session.post(sign_in, data=payload)

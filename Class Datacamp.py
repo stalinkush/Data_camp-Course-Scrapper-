@@ -80,8 +80,8 @@ class DataCamp:
         page = self.session.get(self.home, headers=self.head)
         soup = bs(page.content, 'lxml')
         token = soup.find('input', attrs={'name':'authenticity_token'})['value']    
-        payload = {'user[email]': 'hemanth.shendye@gmail.com',
-                   'user[password]': 'hyperface', 'authenticity_token': token}
+        payload = {'user[email]': None,
+                   'user[password]': None, 'authenticity_token': token}
         result = self.session.post(self.home, data=payload, headers=self.head)
         if str(result.status_code)[0] != '2':
             return 'Login Not Successful' 
@@ -228,9 +228,9 @@ class DataCamp:
         print('Starting Chrome Driver')
         driver = webdriver.Chrome(executable_path=self.chrome_path)     
         driver.get('https://www.datacamp.com/users/sign_in')   
-        driver.find_element_by_name('user[email]').send_keys('hemanth.shendye@gmail.com')
+        driver.find_element_by_name('user[email]').send_keys('NONE')
         driver.find_element_by_name('user[email]').send_keys(Keys.RETURN) 
-        driver.find_element_by_name('user[password]').send_keys('hyperface')
+        driver.find_element_by_name('user[password]').send_keys('NONE')
         driver.find_element_by_name('user[password]').send_keys(Keys.RETURN)
         driver.maximize_window() 
         print('Logged in to Data Camp', end = '\n\n')
@@ -509,8 +509,10 @@ for i in to_download:
     Download_txt.write(line)
     Download_txt.close() 
     print('Details Saved') 
-##################################################################################
-
+################################################################################################################################################
+################################################### END of program, rest is testing and misc ####################################################
+####################################################------------------------------------------#################################################
+##########################################################--------------------------------#####################################################
 Geo_dict 
 
 Geo.PrintCourse(Geo_dict)  
@@ -519,8 +521,10 @@ p = path[:-18]
 os.chdir(p)
 os.getcwd() 
 os.chdir('../')  
-
-###################################################
+####################################################--------------------------------------------##################################################
+###################################################----------------------------------------------------#########################################
+################################################################ Testing and MISC ################################################################
+######################################################################################################################################################
 
 video_links = {}
 for i, lesson in enumerate(Geo_dict.keys()):
@@ -546,12 +550,10 @@ import time
 driver = webdriver.Chrome(executable_path=path)   
 
 driver.get('https://www.datacamp.com/users/sign_in')   
-driver.find_element_by_name('user[email]').send_keys('hemanth.shendye@gmail.com')
-
-
+driver.find_element_by_name('user[email]').send_keys('NONE')
 driver.find_element_by_name('user[email]').send_keys(Keys.RETURN) 
 
-driver.find_element_by_name('user[password]').send_keys('hyperface') 
+driver.find_element_by_name('user[password]').send_keys('NONE') 
 driver.find_element_by_name('user[password]').send_keys(Keys.RETURN)
 
 driver.maximize_window() 
